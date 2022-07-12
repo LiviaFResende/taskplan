@@ -65,24 +65,20 @@ class TaskManager {
             let mm = dueDateFormatted.getMonth() + 1;
             let dd = dueDateFormatted.getDate();
             dueDateFormatted = dd + '/' + mm + '/' + yyyy;
-<<<<<<< HEAD
 
-            lineItem += '<div class="todo-box ' + item.status + ' col-sm-6 col-md-3">  <h5 class="card-title pull-right">' + item.name + '</h5><p class="card-text"><br><b> Description: </b>' + item.description + ' <br><b>Assigned to: </b>' + item.assignedTo + '<br><b>Date: </b> ' + dueDateFormatted + '<br><b>Status: </b>' + item.status + '</p> <button type="button" class="btn btn-primary" onclick = "homeworkTask.editTodo(' + index + ')" data-toggle="modal" data-target="#EditTask">Edit</button>    <a href = "#" class="btn btn-success ' + item.status + 'hide " onclick = "homeworkTask.DoneToDo (' + index + ')">Done</a> <a hreaf ="#" class ="btn btn-danger" onclick = "homeworkTask.deleteToDo(' + index + '); return false" > Delete </a></div>';
-=======
-            lineItem += 
-            `<div class="todo-box ${item.status} col-sm-6 col-md-3">  
+            lineItem +=
+                `<div class="todo-box ${item.status} col-sm-6 col-md-3">  
                 <h5 class="card-title pull-right">${item.name}</h5>
                 <p class="card-text"><br>
                 <b> Description: </b>${item.description} <br>
                 <b>Assigned to: </b>${item.assignedTo}<br>
                 <b>Date: </b>${dueDateFormatted}<br>
-                <b>Status: </b>${item.status }
+                <b>Status: </b>${item.status}
                 </p> 
                 <button type="button" class="btn btn-primary" onclick = "homeworkTask.editTodo(${index})" data-toggle="modal" data-target="#EditTask">Edit</button>
                 <a href = "#" class="btn btn-success ${item.status}hide " onclick = "homeworkTask.DoneToDo (${index})">Done</a> 
                 <a hreaf ="#" class ="btn btn-danger" onclick = "homeworkTask.deleteToDo(${index}); return false" > Delete </a>
             </div>`;
->>>>>>> 21206948712e315cf0e17d7df58c77fd9732e399
 
         }
 
