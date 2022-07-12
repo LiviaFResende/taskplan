@@ -1,4 +1,4 @@
-//Display current date
+//Display current date  ========================================
 let currentDate = new Date()
 let yyyy = currentDate.getFullYear();
 let mm = currentDate.getMonth() + 1;
@@ -6,9 +6,8 @@ let dd = currentDate.getDate();
 currentDate = dd + '/' + mm + '/' + yyyy;
 document.getElementById('current_date').innerHTML = currentDate;
 
+// validate the name input "onblur"  ============================
 const myvalidate = (obj) => {
-
-
     if (obj.value == "" || obj.value.length < obj.dataset.length) {
         obj.classList.add("is-invalid");
         let text = "Enter name with more than 8 characters.";
@@ -16,8 +15,63 @@ const myvalidate = (obj) => {
     }
     else {
         obj.classList.remove("is-invalid");
+        document.getElementById("validateName").innerHTML = "";
     }
 }
+
+//validate de description "onblur" ================================
+// validate the description "onblur" using the addEventListener - failed
+// let description = document.querySelector("#description");
+// description.addEventListener('blur', myvalidateDesc = (objD) => {
+//     if (objD.value == "" || objD.length < 15 || objD == null) {
+//         objD.classList.add("is-invalid");
+//         let textDesc = "Enter value with more than 15 characters.";
+//         document.getElementById("validateDescription").innerHTML = textDesc;
+//     }
+//     else {
+//         objD.classList.remove("is-invalid");
+//         document.getElementById("validateDescription").innerHTML = "";
+//     }
+// });
+
+// // another option that didnt work ================================
+// object.onblur = function(){myScript};
+
+//the only option that I could make it work, was using the "onblur" on HTML ============
+const myvalidateDesc = (objD) => {
+    if (objD.value == "" || objD.length < 15 || obj == null) {
+        objD.classList.add("is-invalid");
+        let textDesc = "Enter value with more than 15 characters.";
+        document.getElementById("validateDescription").innerHTML = textDesc;
+    }
+    else {
+        objD.classList.remove("is-invalid");
+        document.getElementById("validateDescription").innerHTML = "";
+    }
+}
+
+// else if (formAssigned.selectedIndex == "" || formAssigned.selectedIndex == 0) {
+//     let textAssigned = "Assign a task owner";
+//     document.getElementById("validateAssigned").innerHTML = textAssigned;
+//     //document.getElementById("formAssigned").focus();
+//     return false;
+// }//validatation for duedate
+// else if (dueDate == "" || dueDate == null || theDate > anotherDate) {
+//     let UserDate = "Duedate required and should be greater than today";
+//     //alert("You've entered a date that has already been!")
+//     document.getElementById("validateDate").innerHTML = UserDate;
+// }//Validate Status new Date ('2022-04')
+// else if (status.selectedIndex == 0) {
+//     let validStatus = "Select Status of project";
+//     document.getElementById("validateStatus").innerHTML = validStatus;
+//     //document.querySelector('#status').innerHTML = 
+//     // document.getElementById("formAssigned").focus();
+// }
+
+
+
+
+
 
 let saveBtn = document.getElementById("saveBtn")
 saveBtn.addEventListener('click', (event) => {
@@ -37,8 +91,8 @@ saveBtn.addEventListener('click', (event) => {
         let text = "Enter name with more than 8 characters."
         document.getElementById("validateName").innerHTML = text;
     }//Validate Description 
-    if (description === "" || description.length < 15 || description == null) {
-        let textdesc = "Enter value more than 15 characters."
+    else if (description === "" || description.length < 15 || description == null) {
+        let textdesc = "Enter value with more than 15 characters."
         document.getElementById("validateDescription").innerHTML = textdesc;
     }
     //Validate Assigned to
